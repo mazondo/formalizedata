@@ -14,7 +14,8 @@
   <script type="text/javascript" src="../form-data.js"></script>
 
   <!-- include spec files here... -->
-  <script type="text/javascript" src="spec/AppSpec.js"></script>
+  <script type="text/javascript" src="spec/InputSpec.js"></script>
+  <script type="text/javascript" src="spec/TextAreaSpec.js"></script>
 
   <script type="text/javascript">
     (function() {
@@ -57,6 +58,24 @@
     <input type="text" name="arraytext" value="asdf"></input>
     <!-- Nested form data -->
     <input type="text" name="nested.text" value="asdf"></input>
+    <!-- Nested multiple data -->
+    <input type="text" name="nested.array" value="asdf"></input>
+    <input type="text" name="nested.array" value="asdf"></input>
+    <!-- Nested Deep data -->
+    <input type="text" name="nested.deep.deep.level" value="asdf"></input>
+    <!-- specify a number -->
+    <input type="type" name="number" data-type="number" value="2"></input>
+
+    <!-- Text Area -->
+    <textarea name="largetext">large text goes here</textarea>
+
+    <!-- nested text areas with arrays -->
+    <textarea name="nestedlarge.text">Large next text</textarea>
+    <textarea name="nestedlarge.text">Should go here</textarea>
+
+    <!-- nested very very deep text areas -->
+
+    <textarea name="nestedlarge.very.very.deeply">asdf</textarea>
 
   </form>
   <div id="outside-scope">
