@@ -3,10 +3,28 @@ $.fn.formalizeData = function() {
 
 	$(this).find("input, textarea").each(function(index, value) {
 
-		var name = $(this).attr("name"),
-			elements = name.split("."),
+		var name = $(this).attr("name");
+		if (!name) {
+			throw "Elements must be named!";
+		}
+		var	elements = name.split("."),
 			result = $.extend({}, data),
-			dataBuilder;
+			dataBuilder,
+			elementValue;
+
+		/*
+			Setup the value by checking if the user specified a data type
+			Currently only supports numbers
+		*/
+
+		elementValue = $(this).val();
+		if ($(this).data("type") == "number") {
+			if (isNaN(elementValue)) {
+				throw "Expected a number!";
+			} else {
+				elementValue = parseFloat(elementValue);
+			}
+		}
 
 		/*
 			Traverse through the elements in the name trying to get to the final result
@@ -30,17 +48,17 @@ $.fn.formalizeData = function() {
 			/*
 				When nothing exists in the end location, we just save the value
 			*/
-			result = $(this).val();
+			result = elementValue;
 
 		} else {
 			/*
 				When something does exist at the end location, we turn it into an array and add this value to it
 			*/
-			if (typeof(result) === "string") {
-				result = [data[name]];
-				result.push($(this).val());
-			} else if ($.isArray(result)) {
-				result.push($(this).val());
+			if ($.isArray(result)) {
+				result.push(elementValue);
+			} else {
+				result = [result]
+				result.push(elementValue);
 			}
 
 		}

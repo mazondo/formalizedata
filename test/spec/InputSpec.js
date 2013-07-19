@@ -39,4 +39,30 @@ describe("Input Fields", function() {
 		expect(typeof(data.number)).toEqual("number");
 	});
 
+	it("Should throw an exception if you tell it to do a number but don't give it one", function() {
+		var errors = 0,
+			error;
+		try {
+			$("#evil-form-number").formalizeData();
+		} catch (err) {
+			errors = 1;
+			error = err;
+		}
+		expect(errors).toEqual(1);
+		expect(error).toEqual("Expected a number!");
+	});
+
+	it("Should throw an error if no name is sent", function() {
+		var errors = 0,
+			error;
+		try {
+			$("#evil-form-name").formalizeData();
+		} catch (err) {
+			errors = 1;
+			error = err;
+		}
+		expect(errors).toEqual(1);
+		expect(error).toEqual("Elements must be named!");
+	});
+
 });

@@ -78,6 +78,16 @@
     <textarea name="nestedlarge.very.very.deeply">asdf</textarea>
 
   </form>
+
+  <!-- this form throws an exception! -->
+  <form id="evil-form-number">
+    <input type="text" name="number" data-type="number" value="not a number"></input>
+  </form>
+
+  <form id="evil-form-name">
+    <input type="text"></input>
+  </form>
+
   <div id="outside-scope">
   <div id="container"></div>
 </body>
