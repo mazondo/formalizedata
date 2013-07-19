@@ -60,6 +60,7 @@ $("#form").formalizeData();
 	age: 22
 }
 */
+```
 
 ## Roadmap
 Very much a first version, currently only supports input fields and textarea fields.  Coming soon:
