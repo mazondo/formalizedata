@@ -63,6 +63,8 @@ $("#form").formalizeData();
 ```
 
 ## Make your own formats
+Custom formats allow you to define your own transformation that will happen to an input before we store it
+
 ```
 $.formalizeFormat("format-name", function(value) { return value; })
 <input name="custom-format" data-format="format-name"></input>
@@ -70,5 +72,5 @@ $.formalizeFormat("format-name", function(value) { return value; })
 
 ## Roadmap
 Very much a first version, currently only supports input fields and textarea fields.  Coming soon:
- - all input types
- - more data types
+ - all input types (selects, for example)
+ - more data formats (right now just number)
