@@ -54,7 +54,7 @@
 			*/
 
 			elementValue = $(this).val();
-			format = $(this).data("format");
+			format = $(this).data("formalize");
 			if (format && formalizeFormats[format] && typeof(formalizeFormats[format]) == "function") {
 				elementValue = formalizeFormats[format](elementValue);
 			}

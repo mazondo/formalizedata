@@ -53,7 +53,7 @@ $("#form").formalizeData();
 
 ## Specify the type of data you want to see
 ```
-<input name="age" data-format="number" value="22"></input>
+<input name="age" data-formalize="number" value="22"></input>
 
 /*
 {
@@ -67,7 +67,7 @@ Custom formats allow you to define your own transformation that will happen to a
 
 ```
 $.formalizeFormat("format-name", function(value) { return value; })
-<input name="custom-format" data-format="format-name"></input>
+<input name="custom-format" data-formalize="format-name"></input>
 ```
 
 ## Roadmap
