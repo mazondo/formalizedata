@@ -1,5 +1,15 @@
 $.fn.formalizeData = function() {
 	var data = {};
+	var formatOptions = {
+		"number" : function(value) {
+			if (isNaN(value)) {
+				throw "Expected a number!";
+			} else {
+				value = parseFloat(value);
+			}
+			return value;
+		}
+	};
 
 	$(this).find("input, textarea").each(function(index, value) {
 
@@ -10,7 +20,8 @@ $.fn.formalizeData = function() {
 		var	elements = name.split("."),
 			result = $.extend({}, data),
 			dataBuilder,
-			elementValue;
+			elementValue,
+			format;
 
 		/*
 			Setup the value by checking if the user specified a data type
@@ -18,12 +29,9 @@ $.fn.formalizeData = function() {
 		*/
 
 		elementValue = $(this).val();
-		if ($(this).data("type") == "number") {
-			if (isNaN(elementValue)) {
-				throw "Expected a number!";
-			} else {
-				elementValue = parseFloat(elementValue);
-			}
+		format = $(this).data("format");
+		if (format && formatOptions[format] && typeof(formatOptions[format]) == "function") {
+			elementValue = formatOptions[format](elementValue);
 		}
 
 		/*

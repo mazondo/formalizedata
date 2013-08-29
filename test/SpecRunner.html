@@ -64,7 +64,7 @@
     <!-- Nested Deep data -->
     <input type="text" name="nested.deep.deep.level" value="asdf"></input>
     <!-- specify a number -->
-    <input type="type" name="number" data-type="number" value="2"></input>
+    <input type="type" name="number" data-format="number" value="2"></input>
 
     <!-- Text Area -->
     <textarea name="largetext">large text goes here</textarea>
@@ -81,7 +81,7 @@
 
   <!-- this form throws an exception! -->
   <form id="evil-form-number">
-    <input type="text" name="number" data-type="number" value="not a number"></input>
+    <input type="text" name="number" data-format="number" value="not a number"></input>
   </form>
 
   <form id="evil-form-name">
