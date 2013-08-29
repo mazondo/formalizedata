@@ -62,6 +62,12 @@ $("#form").formalizeData();
 */
 ```
 
+## Make your own formats
+```
+$.formalizeFormat("format-name", function(value) { return value; })
+<input name="custom-format" data-format="format-name"></input>
+```
+
 ## Roadmap
 Very much a first version, currently only supports input fields and textarea fields.  Coming soon:
  - all input types

@@ -65,4 +65,12 @@ describe("Input Fields", function() {
 		expect(error).toEqual("Elements must be named!");
 	});
 
+	it("Should let you define your own formats", function() {
+		var customForm = $("#custom-formats");
+		$.formalizeFormat("custom", function(value) {return 1;} );
+		customForm.append("<input name='custom-field' value='asdf' data-format='custom'></input>");
+		var customData = customForm.formalizeData();
+		expect(customData["custom-field"]).toEqual(1);
+	});
+
 });
