@@ -53,7 +53,7 @@ $("#form").formalizeData();
 
 ## Specify the type of data you want to see
 ```
-<input name="age" data-type="number" value="22"></input>
+<input name="age" data-format="number" value="22"></input>
 
 /*
 {
