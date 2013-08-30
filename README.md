@@ -51,6 +51,25 @@ $("#form").formalizeData();
 */
 ```
 
+## Specify the attribute to use
+You can specify the attribute to use when converting to an object.  By default we'll use the name attribute.
+If no attribute is given and no custom attribute is specified, the input will be skipped.
+```
+<form>
+	<input data-custom-name="name" value="ryan"></input>
+</form>
+
+$("form").formalizeData({attribute: "data-custom-name"});
+
+/*
+
+{
+	name: "ryan"
+}
+
+*/
+```
+
 ## Specify the type of data you want to see
 ```
 <input name="age" data-formalize="number" value="22"></input>

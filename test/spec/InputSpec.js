@@ -66,7 +66,9 @@ describe("Input Fields", function() {
 	});
 
 	it("Should let you specify your own name attribute", function() {
-
+		var customForm = $("#custom-name");
+		var data = customForm.formalizeData({attribute: "data-custom-name"});
+		expect(data.name).toEqual("ryan");
 	});
 
 });
