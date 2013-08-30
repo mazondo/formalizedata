@@ -52,17 +52,9 @@ describe("Input Fields", function() {
 		expect(error).toEqual("Expected a number!");
 	});
 
-	it("Should throw an error if no name is sent", function() {
-		var errors = 0,
-			error;
-		try {
-			$("#evil-form-name").formalizeData();
-		} catch (err) {
-			errors = 1;
-			error = err;
-		}
-		expect(errors).toEqual(1);
-		expect(error).toEqual("Elements must be named!");
+	it("Should skip inputs without the name field", function() {
+		var data = $("#evil-form-name").formalizeData();
+		expect(data).toEqual({});
 	});
 
 	it("Should let you define your own formats", function() {
@@ -71,6 +63,10 @@ describe("Input Fields", function() {
 		customForm.append("<input name='custom-field' value='asdf' data-formalize='custom'></input>");
 		var customData = customForm.formalizeData();
 		expect(customData["custom-field"]).toEqual(1);
+	});
+
+	it("Should let you specify your own name attribute", function() {
+
 	});
 
 });

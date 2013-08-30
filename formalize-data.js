@@ -33,15 +33,16 @@
 		formalizeFormats[name] = operation;
 	}
 
-	$.fn.formalizeData = function() {
-		var data = {};
+	$.fn.formalizeData = function(options) {
+		var data = {},
+			defaults = {attribute: "name"},
+			options = $.extend({}, defaults, options);
 
-		$(this).find("input, textarea").each(function(index, value) {
 
-			var name = $(this).attr("name");
-			if (!name) {
-				throw "Elements must be named!";
-			}
+		$(this).find("input[" + options.attribute + "], textarea[" + options.attribute + "]").each(function(index, value) {
+
+			var name = $(this).attr(options.attribute);
+
 			var	elements = name.split("."),
 				result = $.extend({}, data),
 				dataBuilder,
