@@ -39,7 +39,14 @@
 			options = $.extend({}, defaults, options);
 
 
-		$(this).find("input[" + options.attribute + "], textarea[" + options.attribute + "]").each(function(index, value) {
+		$(this).find(":input[" + options.attribute + "]").each(function(index, value) {
+
+			/*
+				Check for a radio button, if it is, make sure it is checked or move on
+			*/
+			if ($(this).attr("type") == "radio" && !$(this)[0].checked) {
+				return;
+			}
 
 			var name = $(this).attr(options.attribute);
 

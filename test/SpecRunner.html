@@ -16,6 +16,9 @@
   <!-- include spec files here... -->
   <script type="text/javascript" src="spec/InputSpec.js"></script>
   <script type="text/javascript" src="spec/TextAreaSpec.js"></script>
+  <script type="text/javascript" src="spec/hiddenSpec.js"></script>
+  <script type="text/javascript" src="spec/radioSpec.js"></script>
+  <script type="text/javascript" src="spec/selectSpec.js"></script>
 
   <script type="text/javascript">
     (function() {
@@ -94,6 +97,28 @@
 
   <form id="custom-name">
     <input type="text" data-custom-name="name" value="ryan"></input>
+  </form>
+
+  <form id="hidden-fields">
+    <input type="hidden" name="hiddenField" value="asdf">
+  </form>
+
+  <form id="radio">
+    <input type="radio" name="radio" value="asdf" checked>ASDF<br>
+    <input type="radio" name="radio" value="asdf2">ASDF2
+  </form>
+
+  <form id="select">
+    <select name="select">
+      <option>asdf</option>
+      <option>asdf2</option>
+    </select>
+    <select name="multipleSelect" multiple>
+      <option>asdf</option>
+      <option>asdf2</option>
+      <option>asdf3</option>
+      <option>asdf4</option>
+    </select>
   </form>
 
   <div id="outside-scope">

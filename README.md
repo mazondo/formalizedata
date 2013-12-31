@@ -51,6 +51,30 @@ $("#form").formalizeData();
 */
 ```
 
+## Supports Radio buttons and Selects
+```
+<input type="radio" name="radioButton" value="asdf" checked>
+<input type="radio" name="radioButton" value="not-checked">
+
+<select name="selectField">
+	<option>Ryan</option>
+	<option>Mat</option>
+</select>
+
+<select name="multipleSelect" multiple>
+	<option>Ryan</option>
+	<option>Mat</option>
+</select>
+
+/*
+{
+	radioButton: "asdf",
+	selectField: "Ryan",
+	multipleSelect: ["Ryan", "Mat"]
+}
+*/
+```
+
 ## Specify the attribute to use
 You can specify the attribute to use when converting to an object.  By default we'll use the name attribute.
 If no attribute is given and no custom attribute is specified, the input will be skipped.
@@ -91,7 +115,6 @@ $.formalizeFormat("format-name", function(value) { return value; })
 
 ## Roadmap
 Very much a first version, currently only supports input fields and textarea fields.  Coming soon:
- - all input types (selects, for example)
  - more data formats (right now just number)
 
 ## Contributing
