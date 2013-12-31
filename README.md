@@ -113,10 +113,6 @@ $.formalizeFormat("format-name", function(value) { return value; })
 <input name="custom-format" data-formalize="format-name"></input>
 ```
 
-## Roadmap
-Very much a first version, currently only supports input fields and textarea fields.  Coming soon:
- - more data formats (right now just number)
-
 ## Contributing
 Would love any and all help you feel like giving, just please:
 
