@@ -1,0 +1,22 @@
+{
+  "name": "formalizedata",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mazondo/formalizedata",
+  "authors": [
+    "Ryan <ryan@mazondo.com>"
+  ],
+  "description": "Turn form fields into a js object",
+  "main": "formalize-data.js",
+  "keywords": [
+    "jquery",
+    "form"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
