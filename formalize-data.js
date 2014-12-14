@@ -50,11 +50,19 @@
 
 			var name = $(this).attr(options.attribute);
 
-			var	elements = name.split("."),
+			var	elements = name.split(/[\.\[\]]/g),
 				result = $.extend({}, data),
 				dataBuilder,
 				elementValue,
 				format;
+
+			/*
+				Check for empty element values, this is mostly an issue with bracket syntax, but also
+				Catches if someone accidently ends a  name with a period
+			*/
+			elements = $.map(elements, function (name) {
+				return name !== "" ? name : null;
+			});
 
 			/*
 				Setup the value by checking if the user specified a data type
@@ -131,7 +139,7 @@
 
 
 		});
-		
+
 		return data;
 	};
 

@@ -71,4 +71,10 @@ describe("Input Fields", function() {
 		expect(data.name).toEqual("ryan");
 	});
 
+	it("Should understand how to parse bracket style names as well", function() {
+		var bracketForm = $("#bracket-style");
+		var data = bracketForm.formalizeData();
+		expect(data.person.name).toEqual("Ryan");
+	});
+
 });
