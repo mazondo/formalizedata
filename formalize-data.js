@@ -47,6 +47,13 @@
 			if ($(this).attr("type") == "radio" && !$(this)[0].checked) {
 				return;
 			}
+			
+			/*
+				Check for a checkbox, if it is, make sure it is checked or move on
+			*/
+			if ($(this).attr("type") == "checkbox" && !$(this)[0].checked) {
+				return;
+			}
 
 			var name = $(this).attr(options.attribute);
 
